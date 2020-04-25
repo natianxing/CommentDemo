@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<font color="red">
+<h1>Comments!</h1></font>
+{% for comment in comments %}
+    <h2>
+    <font color="red">
+    <a>{{comment.pubTime}}</a><br>
+    <a>{{comment.userName}}</a><br>
+    <a>{{comment.contentView}}<a/><br>
+    </font></h2>
+
+    <font color="green">
+    <a href="{% url 'Comment:edit_reply' %}">添加回复</a></font><br>
+
+        <h6>
+        {% for reply in comment.replyList %}
+            <a>{{reply.pubTime}}</a><br>
+            <a>{{reply.userName}}</a><br>
+            <a>{{reply.contentView}}<a/><br>
+        {% endfor %}
+        </h6><br>
+{% endfor %}
+<font color="blue">
+<a href="{% url 'Comment:edit_comment' %}">添加评论</a></font>
+</body>
+</html>

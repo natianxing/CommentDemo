@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<font color="red">
+<h1>Add Reply!</h1></font>
+<form action="{% url 'Comment:post_reply' %}" method="post">
+    {% csrf_token %}
+    <label>paperID
+        <input type="text" name="paperID" value="1"/>
+    </label><br/>
+    <label>userID
+        <input type="text" name="userID" value="1"/>
+    </label><br/>
+    <label>userName
+        <input type="text" name="userName" value="userNameX"/>
+    </label><br/>
+    <label>contentView
+        <input type="text" name="contentView" value="评论哦"/>
+    </label><br/>
+    <label>commentID
+        <input type="text" name="commentID" value="1"/>
+    </label>
+    <label>sortedBy
+        <input type="text" name="sortedBy" value="time"/>
+    </label><br/>
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>

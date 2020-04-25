@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<font color="red">
+<h1>Add Comments!</h1></font>
+<form action="{% url 'Comment:post_comment' %}" method="post">
+    {% csrf_token %}
+    <label>paperID
+        <input type="text" name="paperID" value="1"/>
+    </label><br/>
+    <label>userID
+        <input type="text" name="userID" value="1"/>
+    </label><br/>
+    <label>userName
+        <input type="text" name="userName" value="userNameX"/>
+    </label><br/>
+    <label>contentView
+        <input type="text" name="contentView" value="评论哦"/>
+    </label><br/>
+    <label>sortedBy
+        <input type="text" name="sortedBy" value="time"/>
+    </label><br/>
+    <input type="submit" value="提交">
+</form>
+
+</body>
+</html>
